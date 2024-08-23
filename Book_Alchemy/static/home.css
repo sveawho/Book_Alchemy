@@ -1,0 +1,401 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins Light wird als Standard verwendet */
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    background-image: url('https://images.pexels.com/photos/775998/pexels-photo-775998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    height: 220px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 5rem; /* Adjusted for better visibility */
+    margin-top: 5px;
+    font-family: 'Grey Qo', 'Open Sans', sans-serif;
+}
+
+/* Search Form Styles */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px auto;
+    margin-top: -70px;
+    padding: 30px;
+    padding-bottom: 20px;
+    max-width: 900px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #d3d3d3;
+    font-size: 1.5rem;
+}
+
+.search-input-wrapper input[type="text"] {
+    flex: 1;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.search-button, .cancel-button {
+    padding: 8px;  /* Slightly smaller padding */
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;  /* Smaller font size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 100px; /* Ensures both buttons have the same size */
+    text-align: center; /* Centers text in the buttons */
+}
+
+/* Specific styles for the search button */
+.search-button {
+    background-color: #379ea5; /* Türkis color */
+    color: #fff;
+    text-decoration: none; /* Remove any underline */
+}
+
+.search-button:hover {
+    background-color: #23656a; /* Darker hover effect */
+}
+
+/* Specific styles for the cancel button */
+.cancel-button {
+    background-color: #fff; /* White background */
+    padding-right:0px;
+    padding-left: 0px;
+    color: #333; /* Darker text color */
+    border: 1px solid #ddd; /* Border for the cancel button */
+    text-decoration: none; /* Remove underline */
+}
+
+.cancel-button:hover {
+    background-color: #de7770; /* Red hover effect */
+    color: #fff;
+}
+
+
+/* Navigation Buttons */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px 12px 12px; /* Kleinere Polsterung */
+    margin-top: 15px;
+    background-color: #379ea5; /* Leitfarbe */
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem; /* Kleinere Schriftgröße */
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #23656a; /* Etwas dunkler für Hover-Effekt */
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    margin-right: 8px;
+    font-size: 1.5rem;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    font-size: 0.875rem;;
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius:10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 12px;
+}
+
+th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+th.sortable:hover {
+    background-color: #e2e2e2;
+}
+
+.sorted-asc::after, .sorted-desc::after {
+    position: absolute;
+    right: 10px;
+}
+
+.sorted-asc::after {
+    content: ' ▲';
+}
+
+.sorted-desc::after {
+    content: ' ▼';
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.7rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .search-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .search-input-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-icon {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .search-input-wrapper input[type="text"] {
+        border-radius: 4px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-group button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .add-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-form {
+        padding: 5px;
+    }
+
+    .search-form button {
+        padding: 8px;
+    }
+
+    .add-button {
+        padding: 10px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Cover Column Styles */
+.book-cover {
+    min-width: 80px;
+    max-width: 100px;
+    height: auto;
+    border-radius: 2px;
+}
+
+/* Actions Column Styles */
+.actions {
+    padding: 0;
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #379ea5; /* Leitfarbe */
+    transition: color 0.3s;
+}
+
+.icon-button:hover {
+    color: #23656a; /* Etwas dunkler für Hover-Effekt */
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Fixed Success/Error Message Styles */
+.message-container {
+    position: fixed; /* Fixes the message at the top of the page */
+    top: 0; /* Aligns the message to the top */
+    left: 0; /* Aligns the message to the left */
+    width: 100%; /* Makes the message full width */
+    padding: 10px 15px; /* Padding inside the message */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    text-align: center;
+    font-size: 1rem; /* Adjust font size as needed */
+    font-weight: 500; /* Adjust font weight for emphasis */
+    z-index: 1000; /* Ensures it appears above other content */
+    box-sizing: border-box; /* Ensures padding is included in the height */
+    opacity: 1; /* Ensure the message is visible initially */
+    transition: opacity 0.6s; /* Smooth fade-out transition */
+}
+
+/* Success Message Styles */
+.message-container.success {
+    background-color: #d4edda; /* Light green background for success */
+    color: #155724; /* Dark green text color for success */
+    border: 1px solid #c3e6cb; /* Light green border for success */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Error Message Styles */
+.message-container.error {
+    background-color: #f8d7da; /* Light red background for error */
+    color: #721c24; /* Dark red text color for error */
+    border: 1px solid #f5c6cb; /* Light red border for error */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Additional Styles to adjust height and spacing */
+.message-container p {
+    margin: 0; /* Remove default margin to ensure correct height */
+}
+
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    margin-bottom:70px;
+    gap: 5px;
+}
+
+.pagination li {
+    display: inline;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #379ea5; /* Primary color for links */
+    font-size: 0.875rem; /* Font size for pagination items */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover, .pagination a:focus {
+    background-color: #f1f1f1; /* Background on hover */
+    color: #23656a; /* Darker text color on hover */
+    border-color: #bbb; /* Darker border color on hover */
+}
+
+.pagination .active a {
+    background-color: #379ea5; /* Active page background color */
+    color: #fff; /* Active page text color */
+    border-color: #379ea5; /* Active page border color */
+}
+
+.pagination .disabled span {
+    background-color: #f9f9f9; /* Background for disabled items */
+    color: #ccc; /* Text color for disabled items */
+    border-color: #ddd; /* Border color for disabled items */
+    cursor: not-allowed; /* Not-allowed cursor for disabled items */
+}

@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    background-image: url('https://images.pexels.com/photos/775998/pexels-photo-775998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    height: 220px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Title */
+header h1 {
+    font-size: 5rem;
+    margin-top:-10px;
+    font-family: 'Grey Qo', 'Open Sans', sans-serif;
+}
+
+/* Details Container Styles */
+.details-container {
+    display: flex;
+    flex-direction: column; /* Ensure input fields can stack */
+    margin-top: -50px;
+    padding: 14px 30px 40px 30px;
+    margin-bottom: 60px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+    width: 100%; /* Ensure full width usage */
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem; /* Adjust label size for consistency */
+}
+
+.form-group input {
+    width: 100%; /* Ensure the input takes the full width of its container */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Include padding and border in width */
+    font-size: 1rem; /* Consistent font size */
+}
+
+.form-group input[type="number"] {
+    -moz-appearance: textfield; /* Remove up/down arrows for number input */
+}
+
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+/* Ensure the textarea takes the full width of the container */
+.form-group textarea {
+    width: 100%; /* Make textarea fill the width of its container */
+    padding: 10px; /* Add padding for better appearance */
+    border: 1px solid #ddd; /* Border similar to other input fields */
+    border-radius: 6px; /* Match border-radius with input fields */
+    box-sizing: border-box; /* Include padding and border in width */
+    font-size: 1rem; /* Consistent font size */
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Space above the buttons */
+    width: 100%; /* Ensure buttons take full width */
+    box-sizing: border-box;
+}
+
+/* Ensure all buttons and action links look the same */
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #379ea5;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 40px; /* Ensure consistent height */
+    flex: 1; /* Make buttons fill the available space */
+}
+
+/* Hover effect for action buttons and links */
+.action-button:hover {
+    background-color: #23656a; /* Darker shade on hover */
+}
+
+/* Specific styles for the 'Back' link */
+.action-button.back-link {
+    background-color: #ddd; /* Neutral color for the link */
+    color: #333;
+}
+
+.action-button.back-link:hover {
+    background-color: #bbb; /* Slightly darker on hover */
+}
+
+
+
+/* Fixed Success/Error Message Styles */
+.message-container {
+    position: fixed; /* Fixes the message at the top of the page */
+    top: 0; /* Aligns the message to the top */
+    left: 0; /* Aligns the message to the left */
+    width: 100%; /* Makes the message full width */
+    padding: 10px 15px; /* Padding inside the message */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    text-align: center;
+    font-size: 1rem; /* Adjust font size as needed */
+    font-weight: 500; /* Adjust font weight for emphasis */
+    z-index: 1000; /* Ensures it appears above other content */
+    box-sizing: border-box; /* Ensures padding is included in the height */
+    opacity: 1; /* Ensure the message is visible initially */
+    transition: opacity 0.6s; /* Smooth fade-out transition */
+}
+
+/* Success Message Styles */
+.message-container.success {
+    background-color: #d4edda; /* Light green background for success */
+    color: #155724; /* Dark green text color for success */
+    border: 1px solid #c3e6cb; /* Light green border for success */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Error Message Styles */
+.message-container.error {
+    background-color: #f8d7da; /* Light red background for error */
+    color: #721c24; /* Dark red text color for error */
+    border: 1px solid #f5c6cb; /* Light red border for error */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Additional Styles to adjust height and spacing */
+.message-container p {
+    margin: 0; /* Remove default margin to ensure correct height */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.7rem;
+    margin: 0;
+    color: #333;
+}
+
+

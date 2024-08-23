@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your book library, search, and organize books by title, author, year, or rating.">
+    <meta name="keywords" content="Book Library, Book Management, Search Books, Book Ratings">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='detail.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <title>Book Detail Page</title>
+</head>
+<body>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for category, message in messages %}
+                    <li class="message-container {{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <header>
+        <h1>Book Details</h1>
+    </header>
+
+    <!-- Book Details Container -->
+    <section class="details-container">
+        <div class="details-content">
+            <div class="cover-section">
+                <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-L.jpg" alt="{{ book.title }} cover image" class="book-cover">
+            </div>
+            <div class="info-section">
+                <h1>{{ book.title }}</h1>
+                <p><strong>Author:</strong> <a href="{{ url_for('author_detail', author_id=book.author.id) }}">{{ book.author.name }}</a></p>
+                <p><strong>Publication Year:</strong> {{ book.publication_year }}</p>
+                <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+                <p><strong>Rating:</strong> {{ book.rating if book.rating else 'N/A' }}</p>
+                <p><strong>Summary:</strong> {{ book.summary }}</p>
+            </div>
+        </div>
+
+        <!-- Button Group at the bottom of the content box -->
+        <div class="button-group">
+            <a href="{{ url_for('edit_book', book_id=book.id) }}" class="action-button edit-button">Edit Book</a>
+            <form action="{{ url_for('delete_book', book_id=book.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');" class="full-width-form">
+            <button type="submit" class="action-button delete-button">Delete Book</button>
+            </form>
+            <a href="{{ url_for('home') }}" class="action-button back-link">Back to Library</a>
+</div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 My Book Library. All rights reserved.</p>
+            <p>Designed and developed with ❤️ by Svea.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
