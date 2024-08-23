@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edit author details in your book library.">
+    <meta name="keywords" content="Edit Author, Book Management, Update Author Details">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <title>Edit Author - {{ author.name }}</title>
+</head>
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="message-container {{ messages[0][0] }}">
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <header>
+        <h1>Edit Author</h1>
+    </header>
+
+    <div class="details-container">
+        <div class="info-section">
+            <p>Update the author's details below.</p>
+
+            <form method="POST" action="{{ url_for('edit_author', author_id=author.id) }}">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="{{ author.name }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth_year">Birth Year:</label>
+                    <input type="number" id="birth_year" name="birth_year" value="{{ author.birth_year if author.birth_year is not none else '' }}">
+                </div>
+                <div class="form-group">
+                    <label for="death_year">Death Year:</label>
+                    <input type="number" id="death_year" name="death_year" value="{{ author.death_year if author.death_year is not none else '' }}">
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="action-button primary">Update Author</button>
+                    <a href="{{ url_for('author_detail', author_id=author.id) }}" class="action-button">Back to Author Details</a>
+                    <a href="{{ url_for('home') }}" class="action-button back-to-library">Back to Library</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 My Book Library. All rights reserved.</p>
+            <p>Designed and developed with ❤️ by Svea.</p>
+        </div>
+    </footer>
+</body>
+</html>
